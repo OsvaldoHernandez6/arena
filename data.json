@@ -1,0 +1,236 @@
+{
+  "meta": {
+    "title": "Benchmark competitivo · Arena para gatos Chile",
+    "client": "Catit",
+    "extractionDate": "9 de noviembre de 2026",
+    "totalBrands": 3,
+    "scope": "Instagram orgánico + Meta Ads. LinkedIn queda fuera: no se entregaron páginas y ninguna de las 3 marcas comunica en esa red para el mercado chileno.",
+    "method": "Seguidores, publicaciones, likes, comentarios y fechas extraídos directamente de Instagram y de la Biblioteca de anuncios de Meta el 9-nov-2026 (navegador con sesión iniciada). Frecuencia y engagement calculados sobre los últimos ~52 posts visibles del grid de cada cuenta."
+  },
+
+  "brands": [
+    {
+      "id": "catit",
+      "name": "Catit",
+      "role": "cliente",
+      "handle": "@catit.chile",
+      "url": "https://www.instagram.com/catit.chile/",
+      "color": "#1D9E75",
+      "colorSoft": "rgba(29,158,117,0.10)",
+      "followers": 45400,
+      "following": 182,
+      "posts": 338,
+      "category": "Creador de reels",
+      "bio": "Sirviendo Reyes y Reinas desde 1999 👑 · ¿Dónde comprar la arena Catit Go Natural?",
+      "status": "Activa",
+      "lastPost": "14-oct-2026 (propio) · 19-oct-2026 (colaboración)",
+      "confidence": { "followers": "verified", "posts": "verified", "frequency": "calculated", "engagement": "calculated", "formats": "verified" }
+    },
+    {
+      "id": "catsbest",
+      "name": "Cat's Best",
+      "role": "competidor",
+      "handle": "@catsbestchile",
+      "url": "https://www.instagram.com/catsbestchile/",
+      "color": "#B7792A",
+      "colorSoft": "rgba(183,121,42,0.10)",
+      "followers": 2349,
+      "following": 3204,
+      "posts": 228,
+      "category": "Negocio local",
+      "bio": "Desde Alemania 🇩🇪🐱 ya está en Chile la arena sanitaria 100% ecológica 🌿, aglutinante y absorbe olores como ninguna · catsbest.cl",
+      "status": "Inactiva desde ene-2021",
+      "lastPost": "30-ene-2021",
+      "confidence": { "followers": "verified", "posts": "verified", "frequency": "calculated", "engagement": "calculated", "formats": "verified" }
+    },
+    {
+      "id": "ecobed",
+      "name": "Ecobed",
+      "role": "competidor",
+      "handle": "@ecobed.cl",
+      "url": "https://www.instagram.com/ecobed.cl/",
+      "color": "#534AB7",
+      "colorSoft": "rgba(83,74,183,0.10)",
+      "followers": 1730,
+      "following": 30,
+      "posts": 737,
+      "category": "Animales y mascotas",
+      "bio": "Arenas sanitarias ecológicas para tu gato y sustrato para tu mascota 🐱🐹 · Despachos a todo el país · ecobed.cl",
+      "status": "Activa (alta frecuencia)",
+      "lastPost": "25-oct-2026",
+      "confidence": { "followers": "verified", "posts": "verified", "frequency": "calculated", "engagement": "calculated", "formats": "verified" }
+    }
+  ],
+
+  "instagram": {
+    "comparison": [
+      { "brand": "catit", "tone": "Cercano, juguetón ('michis', 'papis'), foco en producto", "frequency": "0,8 posts propios/sem + 0,7 colabs/sem", "cta": "¿Dónde comprar? / concursos", "community": "Tutores urbanos + red de creators y veterinarias" },
+      { "brand": "catsbest", "tone": "Informativo, origen alemán, ecológico", "frequency": "0 (sin publicar desde ene-2021)", "cta": "Concursos (histórico)", "community": "Dormida; seguidores ganados por follow-back" },
+      { "brand": "ecobed", "tone": "Fechas, ofertas y tips genéricos", "frequency": "4,2 posts/sem", "cta": "Ofertas, despacho a todo Chile", "community": "Casi sin interacción (1–2 likes por post)" }
+    ],
+    "sample": {
+      "catit": { "own": 27, "ownFrom": "25-feb-2026", "ownTo": "14-oct-2026", "collabs": 25, "avgLikes": 142, "medianLikes": 77, "avgComments": 38, "medianComments": 6, "collabAvgLikes": 456, "collabMedianLikes": 174, "collabAvgComments": 65 },
+      "catsbest": { "own": 52, "ownFrom": "10-dic-2020", "ownTo": "30-ene-2021", "collabs": 0, "avgLikes": 18, "medianLikes": 17, "avgComments": 1, "medianComments": 0 },
+      "ecobed": { "own": 52, "ownFrom": "30-jul-2026", "ownTo": "25-oct-2026", "collabs": 0, "avgLikes": 2, "medianLikes": 1, "avgComments": 0, "medianComments": 0 }
+    },
+    "conclusions": [
+      { "title": "Catit es el único jugador real en Instagram", "text": "Con 45,4 mil seguidores, Catit tiene 19 veces la audiencia de Cat's Best y 26 veces la de Ecobed. La competencia directa en esta red prácticamente no existe: el rival a vencer no está en este set, sino en las arenas 'tipo tofu' que los propios anuncios de Catit mencionan." },
+      { "title": "El mejor contenido de Catit no está en su feed", "text": "Los 25 posts en colaboración (creators y veterinarias) promedian 456 likes, 3,2 veces lo que logran los posts propios (142). El post con más alcance del periodo es un reel de @elliotsupercat (3.904 likes y 287 comentarios), no de la marca." },
+      { "title": "Feed propio: estático y con poco ritmo", "text": "El 81% de los posts propios son imágenes fijas y solo el 7% son reels. Catit publica 0,8 veces por semana en su feed y lleva 26 días sin publicar (último post propio: 14-oct)." },
+      { "title": "Engagement bajo, salvo en concursos", "text": "El engagement mediano de un post propio es 0,18% (77 likes + 6 comentarios sobre 45,4 mil seguidores). El concurso del Mes del Gato (858 likes y 820 comentarios) muestra que la comunidad sí responde cuando hay un incentivo claro." },
+      { "title": "Volumen sin valor: el caso Ecobed", "text": "Ecobed publica 4,2 veces por semana (5 veces más que Catit) y obtiene 1–2 likes por post. Es la prueba de que la frecuencia sin una idea de contenido no construye comunidad. Cat's Best, en cambio, tiene la cuenta abandonada desde enero de 2021." }
+    ],
+    "recommendations": [
+      { "title": "Llevar el formato creator al feed propio", "text": "Catit debe producir reels propios con la lógica de sus mejores colaboraciones (humor, POV del gato, prueba real del arenero) y amplificarlos como anuncios de contenido de marca (Partnership Ads). Meta: subir los reels del 7% al 50% del feed propio.", "priority": "alta" },
+      { "title": "Retomar una cadencia mínima de 3 posts por semana", "text": "Con 0,8 posts propios por semana y 26 días de silencio, la cuenta pierde presencia justo cuando Multicat está en pauta. Se recomienda un calendario fijo: 2 reels y 1 carrusel educativo por semana.", "priority": "alta" },
+      { "title": "Hacer de los concursos un sistema", "text": "El concurso de agosto generó 10 veces el engagement de un post promedio. Conviene un concurso mensual ligado a cada lanzamiento (Multicat, LOO, Pixi) con mecánica de comentario y una pregunta que entregue insights.", "priority": "media" },
+      { "title": "Llevar Multicat al orgánico", "text": "Multicat tiene 4 anuncios activos, pero casi no aparece en el feed. Una serie orgánica sobre casas con varios gatos le daría a la pauta un perfil coherente al que llegar.", "priority": "media" }
+    ],
+    "topPosts": [
+      { "brand": "catit", "code": "Dbq6-1MsJHA", "type": "Imagen · concurso", "date": "5-ago-2026", "likes": 858, "comments": 820, "note": "Concurso Mes del Gato: el post propio con más interacción del periodo." },
+      { "brand": "catit", "code": "DYQmv3jtkp_", "type": "Reel · colaboración @elliotsupercat", "date": "12-may-2026", "likes": 3904, "comments": 287, "note": "El contenido más visto del grid de Catit es de un creator, no de la marca." },
+      { "brand": "catit", "code": "DXdHizSDftE", "type": "Carrusel · Pixi", "date": "22-abr-2026", "likes": 603, "comments": 18, "note": "El mejor post de producto: la transportadora Pixi supera a la arena en el orgánico." },
+      { "brand": "ecobed", "code": "DbydkJmiqyW", "type": "Reel · Día del Gato", "date": "8-ago-2026", "likes": 3, "comments": 1, "note": "Representa el patrón de Ecobed: fechas especiales con casi nula respuesta." },
+      { "brand": "catsbest", "code": "CI1UD_3B8h-", "type": "Imagen · concurso", "date": "15-dic-2020", "likes": 44, "comments": 47, "note": "Uno de los últimos posts de Cat's Best antes de abandonar la cuenta." }
+    ]
+  },
+
+  "metaAds": {
+    "searchUrl": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CL&is_targeted_country=false&media_type=all&q=catit.chile&search_type=keyword_unordered&sort_data[direction]=desc&sort_data[mode]=total_impressions",
+    "brands": [
+      {
+        "brand": "catit",
+        "active": true,
+        "adsCount": 8,
+        "summary": "8 anuncios activos de la página Catit Chile, todos de la línea Go Natural. Primera fecha de inicio: 3-jun-2026; la más reciente, 21-sep-2026.",
+        "themes": [
+          { "name": "Lanzamiento Multicat", "count": 4 },
+          { "name": "Dolor: polvo y olor", "count": 2 },
+          { "name": "Diferenciación 'No es tofu'", "count": 2 }
+        ],
+        "notes": [
+          "Mensaje diferenciador fuerte: 'No es tofu. Es cáscara de arvejas. Es mejor.' Ataca directamente a la categoría de arenas tipo tofu.",
+          "Hooks con humor y POV ('tu gato se convirtió en influencer', 'siente que entra al desierto'), en el mismo registro de los creators.",
+          "Multicat (arveja + bentonita) concentra la mitad de la pauta, con CTA 'Comprar' hacia 'tu petshop favorito'.",
+          "Hay dos destinos web distintos (catitgonatural.cl y catitrecipes.cl), lo que fragmenta la medición y la experiencia."
+        ],
+        "ecosystem": "La pauta se apoya en 2 capas más: HagenChile (distribuidor) mantiene 5 anuncios B2B para captar petshops y veterinarias, y retailers como Petvet incluyen a Catit en sus anuncios multimarca de arenas."
+      },
+      {
+        "brand": "catsbest",
+        "active": false,
+        "adsCount": 0,
+        "summary": "La marca no tiene anuncios propios activos en Chile.",
+        "notes": [
+          "Solo aparece 1 anuncio de un retailer (Felinus.cl) que menciona la marca.",
+          "La marca depende 100% de la góndola y del retailer: no hay comunicación propia, ni orgánica ni pagada."
+        ]
+      },
+      {
+        "brand": "ecobed",
+        "active": false,
+        "adsCount": 0,
+        "summary": "Sin anuncios activos en la Biblioteca de anuncios de Meta (Chile).",
+        "notes": [
+          "Concentra todo su esfuerzo en volumen orgánico (4,2 posts/sem) sin apoyo pagado.",
+          "Su promesa de 'despacho a todo Chile' sugiere un modelo D2C que hoy no tiene tráfico pagado que lo alimente."
+        ]
+      }
+    ],
+    "conclusions": [
+      { "title": "Catit está sola en la pauta de la categoría", "text": "De las 3 marcas, solo Catit invierte en Meta Ads. Toda su pauta compite por atención con otras categorías y con retailers, no con estos dos competidores." },
+      { "title": "La pauta está mejor resuelta que el orgánico", "text": "Los anuncios tienen hooks claros, humor y un posicionamiento definido ('no es tofu'). El feed orgánico no comunica ninguna de esas ideas con la misma fuerza." },
+      { "title": "Embudo de 3 capas", "text": "Catit (B2C) + HagenChile (B2B) + retailers (precio) forman un sistema completo, pero sin una puerta digital única: el CTA final es 'pregunta en tu petshop', sin un buscador de tiendas." }
+    ],
+    "recommendations": [
+      { "title": "Unificar el destino web", "text": "Consolidar catitrecipes.cl y catitgonatural.cl en una sola landing con buscador de tiendas por comuna. Así se responde la pregunta de la bio ('¿Dónde comprar?') y se mide la intención.", "priority": "alta" },
+      { "title": "Pautar a los creators que ya funcionan", "text": "Usar anuncios de contenido de marca con los reels de @elliotsupercat, @mundogatos y otros: ya demostraron de 3 a 25 veces más respuesta orgánica que el contenido propio.", "priority": "alta" },
+      { "title": "Defender la palabra 'tofu' en búsqueda", "text": "Si el principal rival es la arena tipo tofu, conviene complementar Meta con Google Search sobre 'arena tofu gatos', con el mensaje comparativo que ya funciona en los anuncios.", "priority": "media" }
+    ]
+  },
+
+  "strategicOpportunities": {
+    "title": "Oportunidades estratégicas de la categoría",
+    "subtitle": "Caminos de comunicación que ninguna de las 3 marcas está aprovechando",
+    "industryStats": [
+      { "value": "4,18 M", "label": "gatos con tutor en Chile; el 86% vive en ciudades", "source": "Subdere · Estudio de población animal" },
+      { "value": "~50%", "label": "de los hogares chilenos tiene al menos un gato", "source": "The Clinic, ago-2025" },
+      { "value": "27%", "label": "de los hogares con gato tiene 2 o más", "source": "The Clinic, ago-2025" },
+      { "value": "+63%", "label": "crecimiento real del gasto de los hogares en mascotas", "source": "CNC, 2026" },
+      { "value": "6–7%", "label": "de las transacciones e-commerce son de la categoría Mascotas", "source": "CNC" },
+      { "value": "~9,3%", "label": "CAGR proyectado del mercado de arena para gatos en Chile, 2026–2031", "source": "StrategyH" }
+    ],
+    "opportunities": [
+      { "icon": "🐱", "title": "La casa con varios gatos", "description": "1 de cada 4 hogares con gato tiene 2 o más. Catit lanzó Multicat solo en pauta: nadie en la categoría le habla de forma orgánica y constante a este segmento, que consume más arena.", "hook": "Serie de reels 'Modo multigato': rutinas reales de casas con 3, 4 y 5 gatos, y cuánto dura una bolsa.", "platforms": ["Instagram", "Meta Ads"] },
+      { "icon": "🏢", "title": "Arenero en 40 m²", "description": "El 86% de los gatos vive en ciudades y la vida en departamento es el motor de la tenencia felina. Las 3 marcas hablan de 'olores', pero ninguna lo lleva al contexto del departamento chico.", "hook": "'El arenero no se nota': tours de departamentos pequeños donde la visita no adivina dónde está el baño del gato.", "platforms": ["Instagram"] },
+      { "icon": "🧪", "title": "La prueba, no el claim", "description": "Las 3 marcas se declaran 'ecológicas' (Cat's Best '100% ecológica', Ecobed 'arenas ecológicas', Catit 'cáscara de arveja'), pero ninguna lo demuestra. Hay espacio para ser quien enseña la prueba.", "hook": "Test en cámara: polvo al verter, firmeza del grumo, qué pasa al compostarla. 'No es tofu' contado con evidencia.", "platforms": ["Instagram", "Meta Ads"] },
+      { "icon": "🎥", "title": "Creators como canal y no como evento", "description": "Las colaboraciones de Catit rinden 3,2 veces más que sus posts propios, pero quedan dispersas en perfiles ajenos. Ningún competidor trabaja con creators: es una ventaja que se puede volver sistema.", "hook": "'Embajadores Go Natural': 5–6 cuentas de gatos fijas, con contenido mensual que se pauta como contenido de marca.", "platforms": ["Instagram", "Meta Ads"] },
+      { "icon": "📍", "title": "Responder '¿Dónde comprar?'", "description": "La bio de Catit lo pregunta y la pauta termina en 'pregunta en tu petshop', mientras HagenChile recluta tiendas en paralelo. Nadie en la categoría ofrece un mapa claro de disponibilidad.", "hook": "Buscador de tiendas por comuna + stories destacadas por región, con co-marketing en los petshops que ya hacen concursos con Catit.", "platforms": ["Instagram", "Web"] },
+      { "icon": "🩺", "title": "El arenero como señal de salud", "description": "Catit ya colabora con veterinarias (Solvet, Safari Vet, Kahu). El arenero dice mucho del bienestar del gato y ninguna marca lo usa como contenido de valor validado por veterinarios.", "hook": "'Lo que el arenero te cuenta': cápsulas con veterinarios sobre cambios de hábito, gato senior e hidratación.", "platforms": ["Instagram"] }
+    ]
+  },
+
+  "diagnosticBrand": {
+    "client": "catit",
+    "scoreNote": "Puntaje adaptado a Instagram + Meta Ads (sin LinkedIn). Los pesos de LinkedIn se redistribuyeron en alcance, frecuencia y pauta.",
+    "rubric": [
+      { "dimension": "Alcance Instagram", "weight": 25, "catit": 25, "catsbest": 1, "ecobed": 1 },
+      { "dimension": "Frecuencia de publicación", "weight": 20, "catit": 8, "catsbest": 0, "ecobed": 20 },
+      { "dimension": "Engagement", "weight": 20, "catit": 7, "catsbest": 0, "ecobed": 1 },
+      { "dimension": "Mix de formatos (Reels)", "weight": 15, "catit": 4, "catsbest": 1, "ecobed": 7 },
+      { "dimension": "Inversión en Meta Ads", "weight": 15, "catit": 13, "catsbest": 0, "ecobed": 0 },
+      { "dimension": "Calidad de contenido / tono", "weight": 5, "catit": 4, "catsbest": 1, "ecobed": 1 }
+    ],
+    "instagram": {
+      "catit": { "handle": "@catit.chile", "followers": 45400, "posts": 338, "postsPerWeek": 0.8, "postsPerWeekWithCollabs": 1.5, "engagementRate": 0.18, "engagementRateAvg": 0.40,
+        "formats": [ { "type": "Imágenes", "pct": 81, "count": 22 }, { "type": "Carruseles", "pct": 11, "count": 3 }, { "type": "Reels", "pct": 7, "count": 2 } ] },
+      "catsbest": { "handle": "@catsbestchile", "followers": 2349, "posts": 228, "postsPerWeek": 0, "engagementRate": 0.0, "engagementRateHistoric": 0.81,
+        "formats": [ { "type": "Imágenes", "pct": 79, "count": 41 }, { "type": "Videos", "pct": 17, "count": 9 }, { "type": "Carruseles", "pct": 4, "count": 2 } ] },
+      "ecobed": { "handle": "@ecobed.cl", "followers": 1730, "posts": 737, "postsPerWeek": 4.2, "engagementRate": 0.06, "engagementRateAvg": 0.12,
+        "formats": [ { "type": "Imágenes", "pct": 69, "count": 36 }, { "type": "Reels", "pct": 31, "count": 16 } ] }
+    },
+    "gaps": [
+      { "dimension": "Alcance · Instagram", "catit": "45.400", "catsbest": "2.349", "ecobed": "1.730", "gapText": "Catit domina por escala. El riesgo no es perder contra este set, sino estancarse: con este alcance, cada post sin ritmo es audiencia desaprovechada.", "severity": "media" },
+      { "dimension": "Frecuencia propia", "catit": "0,8 / sem", "catsbest": "0 (desde 2021)", "ecobed": "4,2 / sem", "gapText": "Ecobed publica 5 veces más que Catit. Su resultado prueba que el volumen solo no basta, pero la cadencia de Catit no sostiene una marca líder y deja 26 días de silencio en plena pauta de Multicat.", "severity": "alta" },
+      { "dimension": "Engagement mediano", "catit": "0,18%", "catsbest": "— (inactiva)", "ecobed": "0,06%", "gapText": "Para una cuenta de 45 mil seguidores lo esperable es 0,5–0,9%. El contenido propio no logra la respuesta que sí consiguen los concursos (3,7%) y los creators.", "severity": "alta" },
+      { "dimension": "Reels en el feed", "catit": "7%", "catsbest": "17% (video)", "ecobed": "31%", "gapText": "Catit tiene el peor mix de video del set en su feed propio, a pesar de que su categoría en Instagram es 'Creador de reels' y de que sus mejores resultados vienen de reels de creators.", "severity": "alta" },
+      { "dimension": "Pauta Meta", "catit": "8 anuncios activos", "catsbest": "0", "ecobed": "0", "gapText": "Es la ventaja más clara de Catit: es la única marca que compra atención. El desafío es que la pauta llegue a un perfil orgánico a la altura.", "severity": "media" },
+      { "dimension": "Uso de creators", "catit": "25 colabs en el grid", "catsbest": "0", "ecobed": "0", "gapText": "Es un activo exclusivo de Catit que hoy vive en perfiles ajenos. Sistematizarlo y pautarlo es la palanca de crecimiento más rápida.", "severity": "media" },
+      { "dimension": "Claim ecológico", "catit": "Cáscara de arveja", "catsbest": "100% ecológica", "ecobed": "Ecológica", "gapText": "Las 3 dicen lo mismo y ninguna lo demuestra. El claim 'eco' ya no diferencia: diferencia la evidencia ('no es tofu', cero polvo, grumo firme).", "severity": "media" }
+    ],
+    "verdict": {
+      "scoreValue": 61,
+      "scoreLabel": "61 / 100",
+      "competitorScores": { "catsbest": 3, "ecobed": 30 },
+      "label": "Líder por ausencia: domina la categoría, pero su contenido propio rinde por debajo de su tamaño",
+      "description": "Catit gana el benchmark con holgura porque sus dos competidores casi no compiten en digital: Cat's Best abandonó Instagram en 2021 y Ecobed publica mucho, pero nadie responde. Aun así, el feed propio de Catit es estático (81% imágenes), irregular (0,8 posts/sem) y con un engagement de 0,18%. Lo que mejor funciona (creators y concursos) ocurre fuera de su contenido habitual.",
+      "strengths": [
+        "19 a 26 veces más audiencia que sus competidores",
+        "Única marca con pauta activa: 8 anuncios con un posicionamiento claro ('No es tofu')",
+        "Red de creators y veterinarias que rinde 3,2 veces más que el contenido propio",
+        "Portafolio más amplio para generar contenido (Go Natural, Multicat, LOO, Pixi)"
+      ],
+      "weaknesses": [
+        "Solo 7% de reels en el feed propio",
+        "0,8 posts propios por semana y 26 días sin publicar",
+        "Engagement mediano de 0,18%, muy bajo para su tamaño",
+        "Dos destinos web y sin respuesta concreta a '¿Dónde comprar?'"
+      ],
+      "priority": [
+        "Producir reels propios con la lógica creator y pautarlos como contenido de marca",
+        "Fijar una cadencia de 3 posts por semana con Multicat en el orgánico",
+        "Unificar la landing con un buscador de tiendas",
+        "Convertir los concursos en un mecanismo mensual atado a lanzamientos"
+      ]
+    }
+  },
+
+  "sources": [
+    { "title": "Subdere · Primer estudio de población animal en Chile", "url": "https://www.subdere.gov.cl/node/81875" },
+    { "title": "The Clinic · La realidad de los gatos en números (ago-2025)", "url": "https://www.theclinic.cl/2025/08/09/la-realidad-de-los-gatos-en-numeros-la-mitad-de-los-hogares-en-chile-tiene-al-menos-uno-y-un-82-de-ellos-los-considera-parte-de-su-familia/" },
+    { "title": "Diario Estrategia · CNC: gasto de hogares en mascotas aumenta 63% real", "url": "https://www.diarioestrategia.cl/texto-diario/mostrar/5992322/cnc-gasto-hogares-mascotas-aumenta-63-real-expandiendose-hacia-salud-servicios-consolidando-ecosistema-economico-us2300-millones-ano" },
+    { "title": "Mediabanco · CNC: Mascotas en e-commerce", "url": "https://www.mediabanco.com/?p=368014" },
+    { "title": "StrategyH · Mercado de arena para gatos en Chile 2026-2031", "url": "https://strategyh.com/es/report/cat-litter-market-in-chile/" },
+    { "title": "Biblioteca de anuncios de Meta · búsqueda catit.chile (CL)", "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CL&is_targeted_country=false&media_type=all&q=catit.chile&search_type=keyword_unordered" }
+  ]
+}
