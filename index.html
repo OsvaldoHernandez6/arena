@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Benchmark Catit · Arena para gatos Chile</title>
+<title>Benchmark Cosycat · Arena para gatos Chile</title>
 <style>
 :root{
   --bg:#f6f1ea;--surface:#fffaf5;--ink:#251a17;--muted:#6e5a54;--line:rgba(37,26,23,.10);
@@ -39,7 +39,7 @@ a{color:inherit}
 .kicker{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
 /* hero */
 .hero{padding:30px 32px;border:1px solid var(--line);border-radius:var(--r-xl);background:var(--surface);box-shadow:var(--shadow);margin-bottom:20px;position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(29,158,117,.14),transparent 70%)}
+.hero::after{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(224,122,46,.16),transparent 70%)}
 .hero-sub{color:var(--muted);font-size:15px;line-height:1.55;max-width:760px;margin-top:12px}
 .pill{display:inline-block;padding:5px 12px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .pill.green{color:var(--green);background:var(--green-soft)}.pill.accent{color:var(--accent);background:var(--accent-soft)}.pill.gold{color:#855a0f;background:var(--gold-soft)}.pill.purple{color:var(--purple);background:var(--purple-soft)}
@@ -100,7 +100,7 @@ a{color:inherit}
 .badge.v{background:#d1e7dd;color:#155724}.badge.e{background:#fff3cd;color:#856404}.badge.c{background:#dbe8fb;color:#1d4f91}
 /* brand cards */
 .bcard{padding:22px;border:1px solid var(--line);border-radius:var(--r-xl);background:var(--surface);box-shadow:var(--shadow-sm);position:relative}
-.bcard.client{border:2px solid var(--green);box-shadow:0 10px 30px rgba(29,158,117,.12)}
+.bcard.client{border:2px solid #E07A2E;box-shadow:0 10px 30px rgba(224,122,46,.14)}
 .bcard-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
 .bcard-top h3{font-size:18px}
 .bcard-top a{font-size:12px;color:var(--muted);text-decoration:none}
@@ -120,7 +120,7 @@ a{color:inherit}
 .fmt div{height:100%}
 .fmt-legend{display:flex;flex-wrap:wrap;gap:10px;font-size:11px;color:var(--muted);margin-top:6px}
 .bio{font-size:12px;color:var(--muted);line-height:1.5;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
-.client-tag{position:absolute;top:-11px;right:18px;background:var(--green);color:#fff;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.client-tag{position:absolute;top:-11px;right:18px;background:#E07A2E;color:#fff;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
 /* stats & opps */
 .stat{padding:18px;border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line)}
 .stat-value{font-size:32px;font-weight:800;letter-spacing:-.04em;color:var(--accent)}
@@ -215,7 +215,10 @@ const META_SVG='<svg viewBox="0 0 24 24" fill="#0081FB"><path d="M24 12.07C24 5.
 const fmtN=n=>n.toLocaleString('es-CL');
 const B=id=>DATA.brands.find(b=>b.id===id);
 const badge=c=>c==='verified'?'<span class="badge v">verificado ✓</span>':c==='calculated'?'<span class="badge c">calculado</span>':'<span class="badge e">estimado</span>';
-const logo=(b,sm)=>`<div class="logo-tile${sm?' sm':''}" style="background:${b.color}">${b.name.replace("'s","’s").split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase()}</div>`;
+const logo=(b,sm)=>`<div class="logo-tile${sm?' sm':''}" style="background:${b.color}">${b.abbr}</div>`;
+const CL=()=>B(DATA.meta.client);
+const ORDER=()=>DATA.diagnosticBrand.order;
+const dc=n=>n.toString().replace('.',',');
 const sevPill=s=>`<span class="sev ${s}">${s}</span>`;
 const prio=p=>`<span class="pill ${p==='alta'?'accent':'gold'}">${p}</span>`;
 const insights=(arr,cls)=>arr.map(c=>`<div class="insight ${cls||''}"><h4>${c.title}</h4><p>${c.text}</p></div>`).join('');
@@ -229,21 +232,21 @@ function renderNav(){
     <a class="nav-ig" href="#instagram"><span class="nav-icon">${IG_SVG}</span>Instagram</a>
     <a class="nav-meta" href="#metaads"><span class="nav-icon">${META_SVG}</span>Meta Ads</a>
     <span class="nav-sep"></span>
-    <a class="nav-diag" href="#diagnostico">🔬 Diagnóstico Catit</a>`;
+    <a class="nav-diag" href="#diagnostico">🔬 Diagnóstico ${CL().name}</a>`;
 }
 
 function renderHero(){
-  const c=B('catit'),d=DATA.diagnosticBrand;
-  const ratio=Math.round(c.followers/B('catsbest').followers);
+  const c=CL(),d=DATA.diagnosticBrand,v=d.verdict,sm=DATA.instagram.sample[c.id];
+  const ads=ORDER().map(id=>DATA.metaAds.brands.find(m=>m.brand===id).adsCount).join(' · ');
   return `<header class="hero" id="top">
-    <span class="pill green">Benchmark competitivo · ${DATA.meta.extractionDate}</span>
-    <h1>Catit vs. Cat’s Best vs. Ecobed</h1>
-    <p class="hero-sub">Arena sanitaria para gatos en Chile. Catit lidera la categoría por amplio margen en Instagram y es la única marca con pauta en Meta. Pero su contenido propio rinde por debajo de su tamaño: lo que mejor le funciona ocurre en perfiles de creators y en concursos.</p>
+    <span class="pill accent">Benchmark competitivo · ${DATA.meta.extractionDate}</span>
+    <h1>${ORDER().map(id=>B(id).name.replace("'","’")).join(' vs. ')}</h1>
+    <p class="hero-sub">Arena sanitaria para gatos en Chile, desde la perspectiva de <b>${c.name}</b>. La categoría digital es una carrera de dos marcas: Cosycat y Catit. Cosycat tiene el mejor formato, el mejor embudo de venta y los reels de creators con más respuesta del set, pero su contenido propio casi no genera conversación.</p>
     <div class="metrics">
-      <div class="metric"><div class="metric-label">Seguidores Catit</div><div class="metric-value">45,4K</div><div class="metric-foot">${ratio}× Cat’s Best · 26× Ecobed</div></div>
-      <div class="metric"><div class="metric-label">Anuncios activos en Meta</div><div class="metric-value">8 · 0 · 0</div><div class="metric-foot">Catit · Cat’s Best · Ecobed</div></div>
-      <div class="metric"><div class="metric-label">Rinde una colab vs. un post propio</div><div class="metric-value">3,2×</div><div class="metric-foot">456 vs. 142 likes promedio</div></div>
-      <div class="metric"><div class="metric-label">Puntaje diagnóstico Catit</div><div class="metric-value">${d.verdict.scoreLabel}</div><div class="metric-foot">Ecobed ${d.verdict.competitorScores.ecobed} · Cat’s Best ${d.verdict.competitorScores.catsbest}</div></div>
+      <div class="metric"><div class="metric-label">Seguidores ${c.name}</div><div class="metric-value">${fmtN(c.followers)}</div><div class="metric-foot">${Math.round(c.followers/B('catit').followers*100)}% de Catit · #2 de la categoría</div></div>
+      <div class="metric"><div class="metric-label">Anuncios activos en Meta</div><div class="metric-value">${ads}</div><div class="metric-foot">${ORDER().map(id=>B(id).name).join(' · ')}</div></div>
+      <div class="metric"><div class="metric-label">Rinde una colab vs. un post propio</div><div class="metric-value">${Math.round(sm.collabAvgLikes/sm.avgLikes)}×</div><div class="metric-foot">${fmtN(sm.collabAvgLikes)} vs. ${sm.avgLikes} likes promedio</div></div>
+      <div class="metric"><div class="metric-label">Puntaje diagnóstico ${c.name}</div><div class="metric-value">${v.scoreLabel}</div><div class="metric-foot">${Object.entries(v.competitorScores).map(([k,x])=>B(k).name+' '+x).join(' · ')}</div></div>
     </div>
     <p class="scope-note"><b>Alcance:</b> ${DATA.meta.scope}<br><b>Método:</b> ${DATA.meta.method}</p>
   </header>`;
@@ -258,13 +261,13 @@ function renderIndustry(){
   <div class="grid g2 section">
     <div class="card"><div class="kicker">Ranking de audiencia · Instagram</div>
       ${ranked.map((b,i)=>`<div class="rank-row"><div class="rank-pos ${['gold','silver','bronze'][i]}">${i+1}</div>${logo(b,true)}
-      <div class="rank-info"><div class="rank-name">${b.name}${b.role==='cliente'?' <span class="pill green" style="font-size:9px;padding:2px 7px">cliente</span>':''}</div><a class="rank-handle" href="${b.url}" target="_blank">${b.handle}</a></div>
+      <div class="rank-info"><div class="rank-name">${b.name}${b.role==='cliente'?' <span class="pill accent" style="font-size:9px;padding:2px 7px">cliente</span>':''}</div><a class="rank-handle" href="${b.url}" target="_blank">${b.handle}</a></div>
       <div class="rank-bar-wrap"><div class="rank-bar" style="width:${Math.max(2,b.followers/max*100)}%;background:${b.color}"></div></div>
       <div class="rank-count">${fmtN(b.followers)}${badge('verified')}</div></div>`).join('')}
     </div>
     <div class="card"><div class="kicker">Estado de cada marca</div>
       ${DATA.brands.map(b=>{const cls=b.id==='catsbest'?'off':b.id==='ecobed'?'warn':'on';return `<div class="rank-row">${logo(b,true)}<div class="rank-info"><div class="rank-name">${b.name}</div><div class="rank-handle">Último post: ${b.lastPost}</div></div><span class="status ${cls}" style="margin:0"><i></i>${b.status}</span></div>`}).join('')}
-      <p class="footnote">La categoría está prácticamente vacía en digital: un competidor abandonó Instagram hace casi 6 años y el otro publica sin respuesta. El rival real de Catit no está en este set, sino en las arenas “tipo tofu” y de bentonita que el retail empuja por precio.</p>
+      <p class="footnote">De 4 marcas, solo 2 compiten de verdad en digital. Cat’s Best abandonó Instagram hace casi 6 años y Ecobed publica sin respuesta. La pelea por la atención, orgánica y pagada, es entre Cosycat y Catit.</p>
     </div>
   </div>`;
 }
@@ -282,8 +285,8 @@ function renderInstagram(){
     <thead><tr><th>Marca</th><th>Seguidores</th><th>Posts</th><th>Tono</th><th>Frecuencia</th><th>CTA</th><th>Comunidad</th></tr></thead>
     <tbody>${ig.comparison.map(r=>{const b=B(r.brand);return `<tr><td class="num"><span class="brand-dot" style="background:${b.color}"></span>${b.name}</td><td class="num">${fmtN(b.followers)}</td><td class="num">${fmtN(b.posts)}</td><td>${r.tone}</td><td>${r.frequency}</td><td>${r.cta}</td><td>${r.community}</td></tr>`}).join('')}</tbody></table></div></div>
   <div class="grid g2 section">
-    <div class="card"><div class="kicker">Engagement mediano por post propio</div><div class="chart-box"><canvas id="chEng"></canvas></div><p class="footnote">(likes + comentarios) ÷ seguidores, mediana de la muestra. La línea punteada marca el 0,5%, el mínimo esperable para cuentas de este tamaño. Cat’s Best se muestra con su dato histórico (2020–21).</p></div>
-    <div class="card"><div class="kicker">Catit · likes por post: propio vs. colaboración</div><div class="chart-box"><canvas id="chCollab"></canvas></div><p class="footnote">Muestra: ${s.catit.own} posts propios y ${s.catit.collabs} colaboraciones visibles en el grid de @catit.chile (feb–oct 2026).</p></div>
+    <div class="card"><div class="kicker">Engagement mediano por post propio</div><div class="chart-box"><canvas id="chEng"></canvas></div><p class="footnote">(likes + comentarios) ÷ seguidores, mediana de la muestra. La línea punteada marca el 0,5%, el mínimo esperable para cuentas de este tamaño. Cat’s Best aparece con su dato histórico (2020–21), en color tenue.</p></div>
+    <div class="card"><div class="kicker">Likes promedio por post: propio vs. colaboración</div><div class="chart-box"><canvas id="chCollab"></canvas></div><p class="footnote">Cosycat: ${s.cosycat.own} propios y ${s.cosycat.collabs} colabs (jun–oct 2026). Catit: ${s.catit.own} propios y ${s.catit.collabs} colabs (feb–oct 2026). Escala logarítmica.</p></div>
   </div>
   <div class="grid g2 section">
     <div class="card"><div class="kicker">Conclusiones</div>${insights(ig.conclusions,'ig')}</div>
@@ -291,7 +294,7 @@ function renderInstagram(){
   </div>
   <div class="section"><div class="section-head"><div><div class="kicker">Posts destacados</div><h2>Lo que funciona y lo que no</h2></div><p>Embeds en vivo desde Instagram. Si alguno no carga, ábrelo con el enlace.</p></div>
   <div class="grid g3">${ig.topPosts.slice(0,3).map(postCard).join('')}</div>
-  <div class="grid g2 section">${ig.topPosts.slice(3).map(postCard).join('')}</div></div>`;
+  <div class="grid g3 section">${ig.topPosts.slice(3).map(postCard).join('')}</div></div>`;
 }
 function postCard(p){const b=B(p.brand);return `<div><div class="embed-shell"><iframe loading="lazy" src="https://www.instagram.com/p/${p.code}/embed/captioned/"></iframe></div>
   <div class="post-meta"><div class="pm-top"><span class="brand-dot" style="background:${b.color}"></span>${b.name} · ${p.type} · ${p.date}</div>
@@ -300,15 +303,15 @@ function postCard(p){const b=B(p.brand);return `<div><div class="embed-shell"><i
 function renderMeta(){
   const ma=DATA.metaAds;
   return divider('meta',META_SVG,'Meta Ads','Biblioteca de anuncios de Meta · Chile · anuncios activos al '+DATA.meta.extractionDate,'metaads')+`
-  <div class="grid g3">${ma.brands.map(m=>{const b=B(m.brand);const maxT=m.themes?Math.max(...m.themes.map(t=>t.count)):1;return `<div class="mab ${m.active?'has':'no'}">
-    <div class="bcard-top" style="margin-bottom:10px">${logo(b)}<div><h3>${b.name}</h3><a href="${b.url}" target="_blank">${b.handle}</a></div></div>
+  <div class="grid g2">${ma.brands.map(m=>{const b=B(m.brand);const maxT=m.themes?Math.max(...m.themes.map(t=>t.count)):1;return `<div class="mab ${m.active?'has':'no'}">
+    <div class="bcard-top" style="margin-bottom:10px">${logo(b)}<div><h3>${b.name}${b.role==='cliente'?' <span class="pill accent" style="font-size:9px;padding:2px 7px">cliente</span>':''}</h3><a href="${b.url}" target="_blank">${b.handle}</a></div></div>
     <span class="ma-status ${m.active?'active':'inactive'}"><i></i>${m.active?'Con anuncios activos':'Sin anuncios propios'}</span>
     <div class="ma-count">${m.adsCount}</div><div style="font-size:12px;color:var(--muted)">anuncios activos ${badge('verified')}</div>
     <p style="font-size:13px;line-height:1.5;margin-top:12px">${m.summary}</p>
     ${m.themes?`<div style="margin-top:12px">${m.themes.map(t=>`<div class="theme-row"><span>${t.name}</span><div class="t-track"><div class="t-bar" style="width:${t.count/maxT*100}%"></div></div><b>${t.count}</b></div>`).join('')}</div>`:''}
     <ul class="ma-notes">${m.notes.map(n=>`<li>${n}</li>`).join('')}</ul>
     ${m.ecosystem?`<div class="eco">${m.ecosystem}</div>`:''}
-    ${m.active?`<a class="ma-btn" href="${ma.searchUrl}" target="_blank">Ver en la Biblioteca de anuncios ↗</a>`:''}
+    ${m.libraryUrl?`<a class="ma-btn" href="${m.libraryUrl}" target="_blank">Ver en la Biblioteca de anuncios ↗</a>`:''}
   </div>`}).join('')}</div>
   <div class="grid g2 section">
     <div class="card"><div class="kicker">Conclusiones</div>${insights(ma.conclusions,'meta')}</div>
@@ -319,8 +322,8 @@ function renderMeta(){
 function brandCard(b,ig){
   const fmtColors=['#E4405F','#FCAF45','#534AB7','#1D9E75'];
   const st=b.id==='catsbest'?'off':b.id==='ecobed'?'warn':'on';
-  const dc=n=>n.toString().replace('.',',');const freqTxt=b.id==='catit'?`${dc(ig.postsPerWeek)} propios · ${dc(ig.postsPerWeekWithCollabs)} con colabs`:dc(ig.postsPerWeek);
-  const er=b.id==='catsbest'?`— <span style="font-size:11px;color:var(--muted)">(hist. ${ig.engagementRateHistoric}%)</span>`:`${ig.engagementRate.toString().replace('.',',')}%`;
+  const freqTxt=ig.postsPerWeekWithCollabs?`${dc(ig.postsPerWeek)} propios · ${dc(ig.postsPerWeekWithCollabs)} con colabs`:dc(ig.postsPerWeek);
+  const er=ig.engagementRateHistoric?`— <span style="font-size:11px;color:var(--muted)">(hist. ${ig.engagementRateHistoric}%)</span>`:`${ig.engagementRate.toString().replace('.',',')}%`;
   return `<div class="bcard ${b.role==='cliente'?'client':''}">${b.role==='cliente'?'<span class="client-tag">Marca cliente</span>':''}
     <div class="bcard-top">${logo(b)}<div><h3>${b.name}</h3><a href="${b.url}" target="_blank">${ig.handle} ↗</a></div></div>
     <span class="status ${st}"><i></i>${b.status}</span>
@@ -339,17 +342,17 @@ function brandCard(b,ig){
 function renderDiagnostic(){
   const d=DATA.diagnosticBrand, v=d.verdict;
   const C=2*Math.PI*92, off=C*(1-v.scoreValue/100);
-  const ids=['catit','catsbest','ecobed'];
-  return divider('diag','🔬','Diagnóstico Catit','Análisis interno vs. competencia · Instagram + Meta Ads','diagnostico')+`
-  <div class="grid g3">${ids.map(id=>brandCard(B(id),d.instagram[id])).join('')}</div>
+  const ids=ORDER();
+  return divider('diag','🔬','Diagnóstico '+CL().name,'Análisis interno vs. competencia · Instagram + Meta Ads','diagnostico')+`
+  <div class="grid g2">${ids.map(id=>brandCard(B(id),d.instagram[id])).join('')}</div>
 
   <div class="card section"><div class="score-wrap">
     <div class="gauge"><svg width="220" height="220" viewBox="0 0 220 220"><circle cx="110" cy="110" r="92" fill="none" stroke="rgba(37,26,23,.07)" stroke-width="18"/>
       <circle cx="110" cy="110" r="92" fill="none" stroke="url(#gg)" stroke-width="18" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${off}"/>
-      <defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#0D2B5E"/><stop offset="1" stop-color="#1D9E75"/></linearGradient></defs></svg>
+      <defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#0D2B5E"/><stop offset="1" stop-color="#E07A2E"/></linearGradient></defs></svg>
       <div class="gauge-center"><b>${v.scoreValue}</b><span>de 100</span></div></div>
     <div><div class="kicker">Veredicto</div><div class="verdict-label">${v.label}</div><p class="verdict-desc">${v.description}</p>
-      <div class="mini-scores">${ids.map(id=>{const b=B(id);const sc=id==='catit'?v.scoreValue:v.competitorScores[id];return `<div class="mini-score"><span class="brand-dot" style="background:${b.color}"></span>${b.name} <b>${sc}</b></div>`}).join('')}</div>
+      <div class="mini-scores">${ids.map(id=>{const b=B(id);const sc=id===d.client?v.scoreValue:v.competitorScores[id];return `<div class="mini-score"><span class="brand-dot" style="background:${b.color}"></span>${b.name} <b>${sc}</b></div>`}).join('')}</div>
       <p class="footnote">${d.scoreNote}</p></div>
   </div></div>
 
@@ -366,7 +369,7 @@ function renderDiagnostic(){
 
   <div class="card section"><div class="kicker">Tabla de brechas</div><div class="cmp-scroll"><table class="cmp-table">
     <thead><tr><th>Dimensión</th>${ids.map(id=>`<th><span class="brand-dot" style="background:${B(id).color}"></span>${B(id).name}</th>`).join('')}<th>Lectura estratégica</th><th>Criticidad</th></tr></thead>
-    <tbody>${d.gaps.map(g=>`<tr><td><b>${g.dimension}</b></td><td class="num">${g.catit}</td><td class="num">${g.catsbest}</td><td class="num">${g.ecobed}</td><td class="read">${g.gapText}</td><td>${sevPill(g.severity)}</td></tr>`).join('')}</tbody></table></div></div>`;
+    <tbody>${d.gaps.map(g=>`<tr><td><b>${g.dimension}</b></td>${ids.map(id=>`<td class="num">${g[id]}</td>`).join('')}<td class="read">${g.gapText}</td><td>${sevPill(g.severity)}</td></tr>`).join('')}</tbody></table></div></div>`;
 }
 
 function renderFooter(){
@@ -377,16 +380,19 @@ function renderFooter(){
 function renderCharts(){
   Chart.defaults.font.family='"Avenir Next","Segoe UI",system-ui,sans-serif';
   Chart.defaults.color='#6e5a54';
-  const ids=['catit','catsbest','ecobed'], di=DATA.diagnosticBrand.instagram;
-  const vals=[di.catit.engagementRate,di.catsbest.engagementRateHistoric,di.ecobed.engagementRate];
+  const ids=ORDER(), di=DATA.diagnosticBrand.instagram;
+  const vals=ids.map(id=>di[id].engagementRateHistoric||di[id].engagementRate);
+  const labels=ids.map(id=>B(id).name+(di[id].engagementRateHistoric?' · inactiva (2020–21)':''));
   const refLine={id:'ref',afterDatasetsDraw(c){const x=c.scales.x.getPixelForValue(0.5),{top,bottom}=c.chartArea,ctx=c.ctx;ctx.save();ctx.setLineDash([5,4]);ctx.strokeStyle='#b74f2a';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(x,top);ctx.lineTo(x,bottom);ctx.stroke();ctx.fillStyle='#b74f2a';ctx.font='600 11px system-ui';ctx.fillText('0,5% referencia',x+6,top+12);ctx.restore()}};
-  new Chart(document.getElementById('chEng'),{type:'bar',data:{labels:['Catit','Cat’s Best · inactiva (dato 2020–21)','Ecobed'],datasets:[{data:vals,backgroundColor:[B('catit').color,'rgba(183,121,42,.28)',B('ecobed').color],borderColor:[B('catit').color,B('catsbest').color,B('ecobed').color],borderWidth:[0,1.5,0],borderDash:[0],borderRadius:6,barThickness:30}]},
-    options:{indexAxis:'y',maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw.toString().replace('.',',')+'%'}}},scales:{x:{min:0,max:1,ticks:{callback:v=>v.toString().replace('.',',')+'%'},grid:{color:'rgba(37,26,23,.06)'}},y:{grid:{display:false}}}},plugins:[refLine]});
-  const s=DATA.instagram.sample.catit;
-  new Chart(document.getElementById('chCollab'),{type:'bar',data:{labels:['Likes promedio','Likes mediana','Comentarios promedio'],datasets:[
-    {label:'Posts propios',data:[s.avgLikes,s.medianLikes,s.avgComments],backgroundColor:'#1D9E75',borderRadius:6},
-    {label:'Colaboraciones',data:[s.collabAvgLikes,s.collabMedianLikes,s.collabAvgComments],backgroundColor:'#E4405F',borderRadius:6}]},
-    options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8}}},scales:{y:{grid:{color:'rgba(37,26,23,.06)'}},x:{grid:{display:false}}}}});
+  new Chart(document.getElementById('chEng'),{type:'bar',data:{labels,datasets:[{data:vals,
+    backgroundColor:ids.map(id=>di[id].engagementRateHistoric?B(id).colorSoft:B(id).color),borderColor:ids.map(id=>B(id).color),borderWidth:ids.map(id=>di[id].engagementRateHistoric?1.5:0),borderRadius:6,barThickness:26}]},
+    options:{indexAxis:'y',maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>dc(c.raw)+'%'}}},scales:{x:{min:0,max:1,ticks:{callback:v=>dc(v)+'%'},grid:{color:'rgba(37,26,23,.06)'}},y:{grid:{display:false}}}},plugins:[refLine]});
+  const S=DATA.instagram.sample, two=['cosycat','catit'];
+  new Chart(document.getElementById('chCollab'),{type:'bar',data:{labels:two.map(id=>B(id).name),datasets:[
+    {label:'Post propio',data:two.map(id=>S[id].avgLikes),backgroundColor:two.map(id=>B(id).colorSoft),borderColor:two.map(id=>B(id).color),borderWidth:1.5,borderRadius:6},
+    {label:'Colaboración con creator',data:two.map(id=>S[id].collabAvgLikes),backgroundColor:two.map(id=>B(id).color),borderRadius:6}]},
+    options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8}},tooltip:{callbacks:{label:c=>c.dataset.label+': '+fmtN(c.raw)+' likes'}}},
+      scales:{y:{type:'logarithmic',min:10,max:3000,ticks:{callback:v=>[10,30,100,300,1000,3000].includes(v)?fmtN(v):''},grid:{color:'rgba(37,26,23,.06)'}},x:{grid:{display:false}}}}});
 }
 
 function render(){
